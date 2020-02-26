@@ -1,0 +1,13 @@
+header {
+  height: 400;
+  width: 100%;
+  background-color: #ed8515;
+  background-image: url('https://www.transparenttextures.com/patterns/escheresque.png');
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+.center {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+}

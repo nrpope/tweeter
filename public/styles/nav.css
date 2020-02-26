@@ -1,0 +1,9 @@
+#nav-bar {
+  position: sticky;
+  height: 120px;
+  width: 100%;
+  z-index: 1;
+  background-color: #4056a1;
+  padding: 1.5em;
+  top: 0em;
+}

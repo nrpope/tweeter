@@ -1,0 +1,20 @@
+input[type='submit'] {
+  background-color: #1606eb;
+  color: #ffffff;
+}
+
+.button {
+  display: flex;
+  justify-content: space-between;
+  font-family: Bungee, sans-serif;
+  padding-bottom: 5px;
+}
+
+textarea[name='text'] {
+  width: 100%;
+  background-color: #f4f1ec;
+  border: none;
+  border-bottom: 3px solid black;
+  margin-bottom: 18px;
+  outline: 0px;
+}

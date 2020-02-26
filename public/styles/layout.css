@@ -6,7 +6,9 @@
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -15,11 +17,98 @@ html {
  */
 
 body {
+  font-family: Source Sans Pro, sans-serif;
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
 }
 
+#logo {
+  font-family: Bungee;
+  color: #ffffff;
+}
+main {
+  width: 90%;
+  text-align: center;
+  color: #545149;
+  margin-left: 5%;
+}
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+.container {
+  margin-left: 2em;
+  margin-right: 2em;
+  margin-top: 1em;
+}
+.container article {
+  margin-bottom: 1em;
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  opacity: 0.5;
+}
+.container article header {
+  padding: 10px;
+  height: 4em;
+  background-color: white;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container article header .name {
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-family: Source Sans Pro700;
+}
+.container article .tweet {
+  padding: 10px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  font-family: Source Sans Pro;
+}
+.container article footer {
+  padding: 10px;
+  width: 100%;
+  height: 40px;
+  font-size: 12px;
+  border-top: 3px solid black;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container article footer .footer-div {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.container article footer .footer-div .like-tweet {
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
+  outline: none;
+}
+
+.container article:hover {
+  box-shadow: 5px 5px 5px black;
+  opacity: 1;
+  visibility: visible;
+}
+
+.container .handle {
+  color: #888;
+  opacity: 0;
+}
+
+.container article:hover .handle {
+  opacity: 1;
+}
