@@ -23,44 +23,31 @@ body {
   font-size: 24px;
 }
 
-#logo {
-  font-family: Bungee;
-  color: #ffffff;
-}
 main {
   width: 90%;
-  text-align: center;
-  color: #545149;
-  margin-left: 5%;
+  margin: auto;
+  position: relative;
 }
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
-.container {
-  margin-left: 2em;
-  margin-right: 2em;
-  margin-top: 1em;
-}
+
 .container article {
-  margin-bottom: 1em;
-  border: 2px solid black;
-  border-radius: 10px;
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  text-align: left;
+  margin-bottom: 2em;
+  margin-top: 2em;
+  border: 3px solid black;
+  border-radius: 8px;
   opacity: 0.5;
 }
 .container article header {
-  padding: 10px;
-  height: 4em;
-  background-color: white;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  margin-top: 0;
   width: 100%;
+  height: 50%;
+  background-color: #f4f1ec;
+  background-image: none;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  border-radius: 8px;
 }
 .container article header .name {
   width: 100%;
@@ -92,9 +79,9 @@ main {
   justify-content: flex-end;
 }
 .container article footer .footer-div .like-tweet {
-  width: 20px;
-  height: 20px;
-  margin-left: 5px;
+  width: 2em;
+  height: 2em;
+  margin-left: 1em;
   outline: none;
 }
 
@@ -111,4 +98,9 @@ main {
 
 .container article:hover .handle {
   opacity: 1;
+}
+
+.tweetText {
+  word-wrap: break-word;
+  padding: 0.5em;
 }

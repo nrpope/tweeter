@@ -1,9 +1,51 @@
-#nav-bar {
-  position: sticky;
+#logo {
+  font-family: Bungee;
+  font-size: 1.5em;
+}
+
+nav {
   height: 120px;
   width: 100%;
-  z-index: 1;
+  z-index: 999;
   background-color: #4056a1;
   padding: 1.5em;
   top: 0em;
+  position: fixed;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+}
+
+nav div {
+  text-align: center;
+  display: grid;
+}
+
+#new-tweet-btn {
+  display: block;
+  background: none;
+  border: none;
+  outline: none;
+  color: #cae5f7;
+  cursor: pointer;
+  animation-name: floating;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes floating {
+  from {
+    transform: translate(0, 0px);
+  }
+  65% {
+    transform: translate(0, 8px);
+  }
+  to {
+    transform: translate(0, -0px);
+  }
+}
+
+#nav-new-tweet.hide {
+  display: none;
 }

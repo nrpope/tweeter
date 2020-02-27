@@ -23,9 +23,18 @@
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- button import -->
+    <script
+      src="https://kit.fontawesome.com/c02ba905d0.js"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- App JS -->
+    <!-- tweet button -->
+    <script type="text/javascript" src="/scripts/tweet-btn.js"></script>
+    <!-- client scripts -->
     <script type="text/javascript" src="/scripts/client.js"></script>
+    <!-- character counter -->
     <script
       type="text/javascript"
       src="/scripts/composer-char-counter.js"
@@ -34,8 +43,14 @@
 
   <body>
     <!-- Top nav bar (fixed) -->
-    <nav id="nav-bar">
+    <nav>
       <span id="logo">tweeter</span>
+      <div id="nav-new-tweet">
+        <label>Write a new tweet</label>
+        <button id="new-tweet-btn">
+          <i class="fas fa-angle-double-down"></i>
+        </button>
+      </div>
     </nav>
     <header>
       <div class="center">

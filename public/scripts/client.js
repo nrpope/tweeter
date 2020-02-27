@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  //wrap all into a document ready so it loads all at once.
   $('#submit-tweet').submit(function(event) {
     event.preventDefault();
     let $this = $(this);
@@ -14,12 +15,12 @@ $(document).ready(function() {
         url: '/tweets',
         data: data
       }).then(() => {
-        // after POST request, make GET request to render the tweet.
+        // after POST request make GET request to render the new tweet
         $.ajax({
           method: 'GET',
           url: '/tweets'
         }).done(tweets => {
-          // we select the tweet that was just created and render it on page
+          // render new tweet on the top of the page
           const $tweet = createTweetElement(tweets[tweets.length - 1]);
           $('.tweets').prepend($tweet);
         });
@@ -38,6 +39,7 @@ $(document).ready(function() {
   };
 
   const createTweetElement = function(tweet) {
+    //dynamic submission form
     let $tweet = $(`
       <article class="single_tweet">
       <header>
@@ -46,7 +48,7 @@ $(document).ready(function() {
         <span class='handle right'>${tweet.user.handle}</span>
       </header>
       <p class="tweetText">${escape(tweet['content']['text'])}</p>
-      <hr />
+      
       <footer>
         <span>${tweet.created_at}</span>
         <div class="tweet-icons">🚩 🔄 ❤️</div>
@@ -57,6 +59,7 @@ $(document).ready(function() {
   };
 
   const loadTweets = function() {
+    //loads all tweets on page
     $.get('/tweets', function(tweets) {
       renderTweets(tweets);
     });
