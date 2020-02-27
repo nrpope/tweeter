@@ -45,11 +45,11 @@ $(document).ready(function() {
         <h2>${tweet.user.name}</h2>
         <span class='handle right'>${tweet.user.handle}</span>
       </header>
-      <p>${tweet.content.text}</p>
+      <p class="tweetText">${escape(tweet['content']['text'])}</p>
       <hr />
       <footer>
         <span>${tweet.created_at}</span>
-        <div class="tweet-icons">🚩🔄❤️</div>
+        <div class="tweet-icons">🚩 🔄 ❤️</div>
       </footer>
     </article>
   `).addClass('tweet');
