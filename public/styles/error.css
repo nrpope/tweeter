@@ -1,0 +1,10 @@
+.alert {
+  padding: 2em;
+  color: red;
+  border: 0.5em solid red;
+  margin-top: 1em;
+  font-family: Bungee;
+  font-size: larger;
+  text-align: center;
+  width: 100%;
+}

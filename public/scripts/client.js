@@ -6,10 +6,21 @@ $(document).ready(function() {
     let data = $this.serialize();
     let textAreaValue = $this.children('textarea').val();
     if (textAreaValue.length === 0) {
-      alert('Text box is empty');
+      $('.alert')
+        .text('Text box is empty')
+        .slideDown();
+      $(this)
+        .find('texarea')
+        .focus();
     } else if (textAreaValue.length > 140) {
-      alert('Too many characters in tweet!');
+      $('.alert')
+        .text('Too many characters in tweet!')
+        .slideDown();
+      $(this)
+        .find('texarea')
+        .focus();
     } else {
+      $('.alert').slideUp();
       $.ajax({
         method: 'POST',
         url: '/tweets',
@@ -23,6 +34,8 @@ $(document).ready(function() {
           // render new tweet on the top of the page
           const $tweet = createTweetElement(tweets[tweets.length - 1]);
           $('.tweets').prepend($tweet);
+
+          $('.counter').text(140);
         });
       });
     }
@@ -32,6 +45,7 @@ $(document).ready(function() {
     // loops through tweets
     // calls createTweetElement for each tweet
     // takes return value and appends it to the tweets container
+    $('.alert').hide();
     tweets.forEach(tweet => {
       const $tweet = createTweetElement(tweet);
       $('.tweets').prepend($tweet);
@@ -55,6 +69,7 @@ $(document).ready(function() {
       </footer>
     </article>
   `).addClass('tweet');
+    $('textarea').val('');
     return $tweet;
   };
 
