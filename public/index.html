@@ -51,15 +51,10 @@
     <main class="container">
       <section class="new-tweet" data-limit="140">
         <h2>Compose Tweet</h2>
-        <form
-          method="POST"
-          Content-Type="applications/x-www-form-url-encoded"
-          action="/tweets"
-          id="submit_tweet"
-        >
+        <form id="submit-tweet">
           <textarea
             name="text"
-            id="submit_tweet"
+            id="tweet-text"
             placeholder="What are you humming about?"
           ></textarea>
           <div class="button">
@@ -67,6 +62,8 @@
             <span class="counter">140</span>
           </div>
         </form>
+      </section>
+      <div class="tweets"></div>
     </main>
   </body>
 </html>

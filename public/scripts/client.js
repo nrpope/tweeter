@@ -1,55 +1,44 @@
-const data = [
-  {
-    user: {
-      name: 'Newton',
-      avatars: 'https://i.imgur.com/73hZDYK.png',
-      handle: '@SirIsaac'
-    },
-    content: {
-      text:
-        'If I have seen further it is by standing on the shoulders of giants'
-    },
-    created_at: 1461116232227
-  },
-  {
-    user: {
-      name: 'Descartes',
-      avatars: 'https://i.imgur.com/nlhLi3I.png',
-      handle: '@rd'
-    },
-    content: {
-      text: 'Je pense , donc je suis'
-    },
-    created_at: 1461113959088
-  }
-];
+$(document).ready(function() {
+  $('#submit-tweet').submit(function(event) {
+    event.preventDefault();
+    let $this = $(this);
+    let data = $this.serialize();
+    let textAreaValue = $this.children('textarea').val();
+    if (textAreaValue.length === 0) {
+      alert('Text box is empty');
+    } else if (textAreaValue.length > 140) {
+      alert('Too many characters in tweet!');
+    } else {
+      $.ajax({
+        method: 'POST',
+        url: '/tweets',
+        data: data
+      }).then(() => {
+        // after POST request, make GET request to render the tweet.
+        $.ajax({
+          method: 'GET',
+          url: '/tweets'
+        }).done(tweets => {
+          // we select the tweet that was just created and render it on page
+          const $tweet = createTweetElement(tweets[tweets.length - 1]);
+          $('.tweets').prepend($tweet);
+        });
+      });
+    }
+  });
 
-const tweetData = {
-  user: {
-    name: 'Newton',
-    avatars: 'https://i.imgur.com/73hZDYK.png',
-    handle: '@SirIsaac'
-  },
-  content: {
-    text: 'If I have seen further it is by standing on the shoulders of giants'
-  },
-  created_at: 1461116232227
-};
-
-const renderTweets = function(tweets) {
-  // loops through tweets
-  // calls createTweetElement for each tweet
-  // takes return value and appends it to the tweets container
-  for (let tweet of tweets) {
-    let $tweet = createTweetElement(tweet);
-    $(document).ready(function() {
-      $('.container').append($tweet);
+  const renderTweets = function(tweets) {
+    // loops through tweets
+    // calls createTweetElement for each tweet
+    // takes return value and appends it to the tweets container
+    tweets.forEach(tweet => {
+      const $tweet = createTweetElement(tweet);
+      $('.tweets').prepend($tweet);
     });
-  }
-};
+  };
 
-const createTweetElement = function(tweet) {
-  let $tweet = $(`
+  const createTweetElement = function(tweet) {
+    let $tweet = $(`
       <article class="single_tweet">
       <header>
         <img src="${tweet.user.avatars}">
@@ -60,10 +49,17 @@ const createTweetElement = function(tweet) {
       <hr />
       <footer>
         <span>${tweet.created_at}</span>
+        <div class="tweet-icons">🚩🔄❤️</div>
       </footer>
     </article>
   `).addClass('tweet');
-  return $tweet;
-};
-console.log('hello there');
-renderTweets(data);
+    return $tweet;
+  };
+
+  const loadTweets = function() {
+    $.get('/tweets', function(tweets) {
+      renderTweets(tweets);
+    });
+  };
+  loadTweets();
+});
