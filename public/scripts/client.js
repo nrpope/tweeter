@@ -52,7 +52,15 @@ $(document).ready(function() {
     });
   };
 
+  const loadTweets = function() {
+    //loads all tweets on page
+    $.ajax({ url: '/tweets', method: 'GET' }).then(tweets => {
+      renderTweets(tweets);
+    });
+  };
+
   const createTweetElement = function(tweet) {
+    const stamp = new Date(tweet.created_at).toLocaleString();
     //dynamic submission form
     let $tweet = $(`
       <article class="single_tweet">
@@ -64,20 +72,15 @@ $(document).ready(function() {
       <p class="tweetText">${escape(tweet['content']['text'])}</p>
       
       <footer>
-        <span>${tweet.created_at}</span>
+        <span>${stamp}</span>
         <div class="tweet-icons">🚩 🔄 ❤️</div>
       </footer>
     </article>
-  `).addClass('tweet');
+    `).addClass('tweet');
     $('textarea').val('');
+    console.log('stamp', stamp);
     return $tweet;
   };
 
-  const loadTweets = function() {
-    //loads all tweets on page
-    $.get('/tweets', function(tweets) {
-      renderTweets(tweets);
-    });
-  };
   loadTweets();
 });
