@@ -63,7 +63,7 @@ $(document).ready(function() {
     let $tweet = $(`
       <article class="single_tweet">
       <header>
-        <img src="${tweet.user.avatars}">
+        <img class="avatar" src="${tweet.user.avatars}">
         <h2>${tweet.user.name}</h2>
         <span class='handle right'>${tweet.user.handle}</span>
       </header>
