@@ -49,3 +49,10 @@ nav div {
 #nav-new-tweet.hide {
   display: none;
 }
+
+/* breakpoint*/
+@media only screen and (min-width: 1024px) {
+  nav {
+    background-color: #4056a1;
+  }
+}

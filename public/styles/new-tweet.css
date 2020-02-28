@@ -22,5 +22,12 @@ textarea[name='text'] {
 .new-tweet {
   margin-bottom: 4em;
 }
-/* add margin to new tweets
-add wrapping */
+/* breakpoint*/
+@media only screen and (min-width: 1024px) {
+  .new-tweet {
+    width: 60%;
+    float: right;
+    margin-bottom: 2rem;
+    margin-top: 0;
+  }
+}
