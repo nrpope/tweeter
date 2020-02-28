@@ -51,6 +51,12 @@ $(document).ready(function() {
     });
   };
 
+  const escape = function(str) {
+    let div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   const createTweetElement = function(tweet) {
     const stamp = new Date(tweet.created_at).toLocaleString();
     //dynamic submission form
@@ -61,7 +67,7 @@ $(document).ready(function() {
         <h2>${tweet.user.name}</h2>
         <span class='handle right'>${tweet.user.handle}</span>
       </header>
-      <p class="tweetText">${escape(tweet['content']['text'])}</p>
+      <p class="tweetText">${tweet.content.text}</p>
       
       <footer>
         <span>${stamp}</span>
