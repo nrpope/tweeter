@@ -68,17 +68,16 @@
       <header class="top">
         <div class="center">
           <img src="/images/profile-hex.png" />
-        </div>
         <br />
-        <div class="center">
-          <h2>Nick Pope</h2>
+          <h2><span class="bold">Nick</span> Pope</h2>
         </div>
       </header>
 
       <!-- Page-specific (main) content here -->
       <main class="container">
         <div class="alert"></div>
-        <section class="new-tweet" data-limit="140">
+        <div class="tweets">
+          <section class="new-tweet single_tweet" data-limit="140">
           <h2>Compose Tweet</h2>
           <form id="submit-tweet">
             <textarea
@@ -91,8 +90,7 @@
               <span class="counter">140</span>
             </div>
           </form>
-        </section>
-        <div class="tweets"></div>
+        </section></div>
       </main></div>
     </body>
   </div>

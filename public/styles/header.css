@@ -1,6 +1,5 @@
 header {
   position: relative;
-  margin-top: 120px;
   height: 400px;
   width: 100%;
   background-color: #ed8515;
@@ -11,13 +10,17 @@ header {
   display: grid;
   place-items: center;
 }
-
+.center h2 {
+  text-shadow: 0 0 1em #000;
+  font-weight: lighter;
+}
 /* breakpoint*/
 @media only screen and (min-width: 1024px) {
   .weirdFlex {
     margin: auto;
     display: flex;
     flex-direction: row;
+    margin-top: 0;
   }
   header {
     flex: 0;

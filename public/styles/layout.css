@@ -24,13 +24,20 @@ body {
 }
 
 main {
-  width: 90%;
+  width: 75%;
   margin: auto;
   position: relative;
 }
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+body > nav * {
+  font-weight: bolder;
+}
+.bold {
+  font-weight: bold;
+}
 
 .container article {
   margin-bottom: 2em;
@@ -98,6 +105,14 @@ main {
 }
 
 .container article:hover .handle {
+  opacity: 1;
+}
+
+.tweet-icons {
+  opacity: 0;
+}
+
+.container article:hover .tweet-icons {
   opacity: 1;
 }
 
