@@ -27,16 +27,8 @@ $(document).ready(function() {
         data: data
       }).then(() => {
         // after POST request make GET request to render the new tweet
-        $.ajax({
-          method: 'GET',
-          url: '/tweets'
-        }).done(tweets => {
-          // render new tweet on the top of the page
-          const $tweet = createTweetElement(tweets[tweets.length - 1]);
-          $('.tweets').prepend($tweet);
-
-          $('.counter').text(140);
-        });
+        loadTweets();
+        $('.counter').text(140);
       });
     }
   });
@@ -48,7 +40,7 @@ $(document).ready(function() {
     $('.alert').hide();
     tweets.forEach(tweet => {
       const $tweet = createTweetElement(tweet);
-      $('.tweets').prepend($tweet);
+      $tweet.insertAfter('.new-tweet');
     });
   };
 
