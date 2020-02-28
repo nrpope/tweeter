@@ -52,45 +52,48 @@
     />
   </head>
 
-  <body>
-    <!-- Top nav bar (fixed) -->
-    <nav>
-      <span id="logo">tweeter</span>
-      <div id="nav-new-tweet">
-        <label>Write a new tweet</label>
-        <button id="new-tweet-btn">
-          <i class="fas fa-angle-double-down"></i>
-        </button>
-      </div>
-    </nav>
-    <header>
-      <div class="center">
-        <img src="/images/profile-hex.png" />
-      </div>
-      <br />
-      <div class="center">
-        <h2>Nick Pope</h2>
-      </div>
-    </header>
+    <body>
+      <!-- Top nav bar (fixed) -->
+    
+      <nav>
+        <span id="logo">tweeter</span>
+        <div id="nav-new-tweet">
+          <label>Write a new tweet</label>
+          <button id="new-tweet-btn">
+            <i class="fas fa-angle-double-down"></i>
+          </button>
+        </div>
+      </nav>
+      <div class="weirdFlex">
+      <header class="top">
+        <div class="center">
+          <img src="/images/profile-hex.png" />
+        </div>
+        <br />
+        <div class="center">
+          <h2>Nick Pope</h2>
+        </div>
+      </header>
 
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-      <div class="alert"></div>
-      <section class="new-tweet" data-limit="140">
-        <h2>Compose Tweet</h2>
-        <form id="submit-tweet">
-          <textarea
-            name="text"
-            id="tweet-text"
-            placeholder="What are you humming about?"
-          ></textarea>
-          <div class="button">
-            <input id="submit" type="submit" value="Tweet" />
-            <span class="counter">140</span>
-          </div>
-        </form>
-      </section>
-      <div class="tweets"></div>
-    </main>
-  </body>
+      <!-- Page-specific (main) content here -->
+      <main class="container">
+        <div class="alert"></div>
+        <section class="new-tweet" data-limit="140">
+          <h2>Compose Tweet</h2>
+          <form id="submit-tweet">
+            <textarea
+              name="text"
+              id="tweet-text"
+              placeholder="What are you humming about?"
+            ></textarea>
+            <div class="button">
+              <input id="submit" type="submit" value="Tweet" />
+              <span class="counter">140</span>
+            </div>
+          </form>
+        </section>
+        <div class="tweets"></div>
+      </main></div>
+    </body>
+  </div>
 </html>

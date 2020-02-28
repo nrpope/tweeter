@@ -5,12 +5,12 @@
 
 nav {
   height: 120px;
-  width: 100%;
+  width: 100vw;
   z-index: 999;
   background-color: #4056a1;
   padding: 1.5em;
   top: 0em;
-  position: fixed;
+  position: sticky;
   color: #ffffff;
   display: flex;
   justify-content: space-between;
