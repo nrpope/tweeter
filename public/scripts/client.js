@@ -40,7 +40,7 @@ $(document).ready(function() {
 
     // turn each tweet in database into an html element, and append them to container
     for (const tweet of tweetsDatabase) {
-      $('#tweets-container').append(createTweetElement(tweet));
+      $('#tweets-container').prepend(createTweetElement(tweet));
     }
   };
 
