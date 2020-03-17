@@ -32,16 +32,16 @@ $(document).ready(function() {
       });
     }
   });
-
-  const renderTweets = function(tweets) {
-    // loops through tweets
-    // calls createTweetElement for each tweet
-    // takes return value and appends it to the tweets container
+  // adds all tweets to #tweets-container
+  const renderTweets = tweetsDatabase => {
     $('.alert').hide();
-    tweets.forEach(tweet => {
-      const $tweet = createTweetElement(tweet);
-      $tweet.insertAfter('.new-tweet');
-    });
+    // remove any tweets that are already in the container
+    $('#tweets-container').empty();
+
+    // turn each tweet in database into an html element, and append them to container
+    for (const tweet of tweetsDatabase) {
+      $('#tweets-container').append(createTweetElement(tweet));
+    }
   };
 
   const loadTweets = function() {
